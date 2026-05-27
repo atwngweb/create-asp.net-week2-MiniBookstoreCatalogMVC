@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Trang Chủ - Mini Bookstore";
+    // @{ } dùng để viết code C# thuần trong View
+}
+
+<div class="container mt-4">
+    <div class="jumbotron bg-primary text-white p-5 rounded">
+        <h1 class="display-4">📚 Mini Bookstore Catalog</h1>
+        <p class="lead">Hệ thống quản lý danh mục sách đơn giản, dễ dùng.</p>
+        <hr class="my-4">
+        <p>Xem danh sách sách, thông tin chi tiết và thống kê kho hàng.</p>
+        <!-- asp-controller / asp-action: Tag Helper tạo URL tự động -->
+        <a class="btn btn-light btn-lg"
+           asp-controller="Books" asp-action="Index">
+           📖 Xem danh sách sách
+        </a>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">📋 Danh sách sách</h5>
+                    <p class="card-text">Xem toàn bộ catalog với trạng thái tồn kho.</p>
+                    <a asp-controller="Books" asp-action="Index"
+                       class="btn btn-primary">Xem ngay</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">📊 Thống kê kho</h5>
+                    <p class="card-text">Tổng quan tồn kho, hết hàng, sắp hết.</p>
+                    <a asp-controller="Books" asp-action="Stats"
+                       class="btn btn-success">Xem thống kê</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">🔗 Book JSON API</h5>
+                    <p class="card-text">Xem dữ liệu sách dạng JSON (demo API).</p>
+                    <a asp-controller="Books" asp-action="BookJson"
+                       class="btn btn-secondary">Xem JSON</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

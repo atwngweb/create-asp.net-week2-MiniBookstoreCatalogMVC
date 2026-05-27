@@ -1,0 +1,87 @@
+@model MiniBookstoreCatalogMVC.ViewModels.BookDetailViewModel
+
+@{
+    ViewData["Title"] = "Chi Tiết: " + Model.Title;
+}
+
+<div class="container mt-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a asp-controller="Books" asp-action="Index">Sách</a>
+            </li>
+            <li class="breadcrumb-item active">@Model.Title</li>
+        </ol>
+    </nav>
+
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h3>📖 @Model.Title</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">ISBN</dt>
+                        <dd class="col-sm-8">@Model.ISBN</dd>
+
+                        <dt class="col-sm-4">Tác giả</dt>
+                        <dd class="col-sm-8">@Model.Author</dd>
+
+                        <dt class="col-sm-4">Thể loại</dt>
+                        <dd class="col-sm-8">
+                            <span class="badge bg-secondary">@Model.Category</span>
+                        </dd>
+
+                        <dt class="col-sm-4">Giá</dt>
+                        <dd class="col-sm-8">
+                            <strong class="text-primary">
+                                @Model.Price.ToString("N0") ₫
+                            </strong>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">Nhà XB</dt>
+                        <dd class="col-sm-8">@Model.Publisher</dd>
+
+                        <dt class="col-sm-4">Năm XB</dt>
+                        <dd class="col-sm-8">@Model.PublishedYear</dd>
+
+                        <dt class="col-sm-4">Tồn kho</dt>
+                        <dd class="col-sm-8">@Model.StockQuantity quyển</dd>
+
+                        <dt class="col-sm-4">Trạng thái</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.StockStatus == "Out Of Stock")
+                            {
+                                <span class="badge bg-danger fs-6">❌ Out Of Stock</span>
+                            }
+                            else if (Model.StockStatus == "Low Stock")
+                            {
+                                <span class="badge bg-warning text-dark fs-6">⚠ Low Stock</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-success fs-6">✅ In Stock</span>
+                            }
+                        </dd>
+
+                        <dt class="col-sm-4">Cập nhật</dt>
+                        <dd class="col-sm-8">
+                            @Model.LastUpdated.ToString("dd/MM/yyyy")
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <a asp-action="Index" class="btn btn-secondary">← Quay lại</a>
+            <a asp-action="Stats" class="btn btn-success">📊 Thống kê</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+@model MiniBookstoreCatalogMVC.ViewModels.BookStatsViewModel
+
+@{
+    ViewData["Title"] = "Thống Kê Kho Sách";
+}
+
+<div class="container mt-4">
+    <h2>📊 Thống Kê Kho Sách</h2>
+
+    <div class="row mb-4">
+        <!-- Card tổng số sách -->
+        <div class="col-md-3">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-body text-center">
+                    <h1 class="card-title">@Model.TotalBooks</h1>
+                    <p class="card-text">Tổng số đầu sách</p>
+                </div>
+            </div>
+        </div>
+        <!-- Card tổng tồn kho -->
+        <div class="col-md-3">
+            <div class="card text-white bg-info mb-3">
+                <div class="card-body text-center">
+                    <h1 class="card-title">@Model.TotalStock</h1>
+                    <p class="card-text">Tổng tồn kho</p>
+                </div>
+            </div>
+        </div>
+        <!-- Card hết hàng -->
+        <div class="col-md-3">
+            <div class="card text-white bg-danger mb-3">
+                <div class="card-body text-center">
+                    <h1 class="card-title">@Model.OutOfStockCount</h1>
+                    <p class="card-text">Hết hàng</p>
+                </div>
+            </div>
+        </div>
+        <!-- Card sắp hết -->
+        <div class="col-md-3">
+            <div class="card text-white bg-warning mb-3">
+                <div class="card-body text-center">
+                    <h1 class="card-title">@Model.LowStockCount</h1>
+                    <p class="card-text">Sắp hết hàng</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Danh sách sách hết hàng -->
+    @if (Model.OutOfStockTitles.Any())
+    {
+        <div class="alert alert-danger">
+            <h5>❌ Sách đã hết hàng:</h5>
+            <ul>
+                @foreach (var title in Model.OutOfStockTitles)
+                {
+                    <li>@title</li>
+                }
+            </ul>
+        </div>
+    }
+
+    <!-- Danh sách sách sắp hết -->
+    @if (Model.LowStockTitles.Any())
+    {
+        <div class="alert alert-warning">
+            <h5>⚠ Sách sắp hết hàng (cần nhập thêm):</h5>
+            <ul>
+                @foreach (var title in Model.LowStockTitles)
+                {
+                    <li>@title</li>
+                }
+            </ul>
+        </div>
+    }
+
+    <a asp-action="Index" class="btn btn-secondary">← Danh sách sách</a>
+</div>
