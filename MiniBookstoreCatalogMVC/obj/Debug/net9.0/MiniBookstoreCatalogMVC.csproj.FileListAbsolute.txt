@@ -94,3 +94,4 @@ F:\Workspace\lab2-dotnet\MiniBookstoreCatalogMVC\MiniBookstoreCatalogMVC\obj\Deb
 F:\Workspace\lab2-dotnet\MiniBookstoreCatalogMVC\MiniBookstoreCatalogMVC\obj\Debug\net9.0\MiniBookstoreCatalogMVC.pdb
 F:\Workspace\lab2-dotnet\MiniBookstoreCatalogMVC\MiniBookstoreCatalogMVC\obj\Debug\net9.0\MiniBookstoreCatalogMVC.genruntimeconfig.cache
 F:\Workspace\lab2-dotnet\MiniBookstoreCatalogMVC\MiniBookstoreCatalogMVC\obj\Debug\net9.0\ref\MiniBookstoreCatalogMVC.dll
+F:\Workspace\lab2-dotnet\MiniBookstoreCatalogMVC\MiniBookstoreCatalogMVC\obj\Debug\net9.0\MiniBookstoreCatalogMVC.sourcelink.json

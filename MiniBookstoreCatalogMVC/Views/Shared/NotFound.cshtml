@@ -1,0 +1,46 @@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>404 - Không tìm thấy</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #e8f4f8;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .box {
+            background: white;
+            padding: 60px 80px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .num { font-size: 80px; font-weight: bold; color: #e74c3c; }
+        .msg { font-size: 22px; color: #2c3e50; margin: 14px 0 6px; }
+        .sub { color: #888; margin-bottom: 24px; }
+        .btn {
+            display: inline-block;
+            background: #2c3e50;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="num">404</div>
+        <div class="msg">Không tìm thấy sách!</div>
+        <div class="sub">Sách bạn tìm không tồn tại trong hệ thống.</div>
+        <a class="btn" href="/Books">← Quay lại danh sách</a>
+    </div>
+</body>
+</html>

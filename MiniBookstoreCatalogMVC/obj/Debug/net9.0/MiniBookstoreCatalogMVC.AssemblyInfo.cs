@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiniBookstoreCatalogMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af43d61b5e53a1cf6d7d835ec49df02693dee3a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiniBookstoreCatalogMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiniBookstoreCatalogMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

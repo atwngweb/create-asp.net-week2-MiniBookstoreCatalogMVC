@@ -44,7 +44,7 @@ namespace MiniBookstoreCatalogMVC.Controllers
 
             // Nếu không tìm thấy sách → trả về 404
             if (book == null)
-                return NotFound();
+                return View("NotFound");
 
             var viewModel = new BookDetailViewModel
             {
